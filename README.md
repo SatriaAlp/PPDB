@@ -8,7 +8,7 @@ Aplikasi ini mendukung berbagai peran pengguna seperti admin, bendahara, kepala 
 
 ### Wali Siswa
 - Melakukan registrasi siswa secara online
-- Mengunggah dokumen persyaratan (KK, Akta, dll)
+- Mengunggah dokumen persyaratan (KK, Akta Lahir, dll)
 - Melakukan pembayaran
 - Melihat status pendaftaran dan hasil seleksi
 
