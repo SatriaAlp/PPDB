@@ -45,3 +45,5 @@ Pengujian akan dibagi menjadi tiga metode untuk mendapatkan *coverage* (cakupan)
 * 100% *checklist* pada *Software Inspection* terpenuhi.
 * Tidak ada *bug* dengan level *Critical* atau *High* pada hasil *Black Box Testing*.
 * Semua diskusi pada *Technical Review* (Pull Request) telah diselesaikan (*resolved*).
+
+Draft awal oleh Gita
