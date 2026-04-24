@@ -33,9 +33,9 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 ##  Daftar Dokumen
 | No | Nama File | Modul yang Diuji | Jumlah TC | Status |
 |----|-----------|-----------------|-----------|--------|
-| 1 | `TestCase_BlackBox_Login_RegisterAkun.pdf` | Login & Registrasi Akun | 11 TC | ✅ Selesai |
-| 2 | `TestCase_BlackBox_Pendaftaran.pdf` | Form Pendaftaran Siswa | 12 TC | ✅ Selesai |
-| 3 | `TestCase_BlackBox_Pembayaran_Dashboard.pdf` | Pembayaran & Dashboard | 12 TC | ✅ Selesai |
+| 1 | `TestCase_BlackBox_Login_RegisterAkun.pdf` | Login & Registrasi Akun | 11 TC |  Selesai |
+| 2 | `TestCase_BlackBox_Pendaftaran.pdf` | Form Pendaftaran Siswa | 12 TC |  Selesai |
+| 3 | `TestCase_BlackBox_Pembayaran_Dashboard.pdf` | Pembayaran & Dashboard | 12 TC |  Selesai |
 
 ---
 
