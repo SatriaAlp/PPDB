@@ -1,6 +1,6 @@
-# 🔲 Grey Box Testing — Sistem PPDB TKQ AS-SALAM
+# Grey Box Testing — Sistem PPDB TKQ AS-SALAM
 
-## 📌 Deskripsi
+##  Deskripsi
 Folder ini berisi dokumen pengujian **Grey Box Testing** pada Sistem 
 PPDB (Penerimaan Peserta Didik Baru) TKQ AS-SALAM.
 
@@ -11,7 +11,7 @@ lalu memverifikasi hasilnya langsung ke database MySQL.
 
 ---
 
-## 👥 Tim Pengujian
+## Tim Pengujian
 | Nama | NIM | Peran |
 |------|-----|-------|
 | Diva Rosalinda | 20231310005 | Tester & Dokumentasi |
@@ -21,7 +21,7 @@ lalu memverifikasi hasilnya langsung ke database MySQL.
 
 ---
 
-## 🎯 Teknik Pengujian
+##  Teknik Pengujian
 | Teknik | Keterangan |
 |--------|-----------|
 | Integration Testing | Menguji integrasi antar modul & tabel database |
@@ -31,7 +31,7 @@ lalu memverifikasi hasilnya langsung ke database MySQL.
 
 ---
 
-## 📂 Daftar Dokumen
+##  Daftar Dokumen
 | No | Nama File | Jenis Pengujian | Jumlah TC | Status |
 |----|-----------|----------------|-----------|--------|
 | 1 | `TestCase_GreyBox_Integrasi.pdf` | Integration Testing | 12 TC | ✅ Selesai |
@@ -39,7 +39,7 @@ lalu memverifikasi hasilnya langsung ke database MySQL.
 
 ---
 
-## 📊 Rekap Hasil Pengujian
+##  Rekap Hasil Pengujian
 | Dokumen | Total TC | Pass | Fail | Coverage |
 |---------|----------|------|------|----------|
 | Grey Box Integrasi | 12 | 12 | 0 | 100% |
@@ -48,7 +48,7 @@ lalu memverifikasi hasilnya langsung ke database MySQL.
 
 ---
 
-## 🔍 Cakupan Pengujian
+##  Cakupan Pengujian
 
 ### 1. Integration Testing (`TestCase_GreyBox_Integrasi.pdf`)
 Menguji integrasi antara UI dan database secara bersamaan:
@@ -68,17 +68,17 @@ Memastikan 70 commit tidak merusak fitur yang sudah berjalan:
 
 | Fitur yang Diuji Ulang | Status |
 |------------------------|--------|
-| Login Wali & Admin | ✅ Stabil |
-| Pendaftaran & Upload File | ✅ Stabil |
-| Seleksi Otomatis Umur | ✅ Stabil |
-| Password Hashing (bcrypt) | ✅ Stabil |
-| UNIQUE Constraint Username | ✅ Stabil |
-| Foreign Key Antar Tabel | ✅ Stabil |
-| JOIN Query Pembayaran | ✅ Stabil |
-| Dashboard Multi-Profil Anak | ✅ Stabil |
-| Nominal Tagihan dari Rincian Biaya | ✅ Stabil |
-| Logout & Hapus Session | ✅ Stabil |
+| Login Wali & Admin |  Stabil |
+| Pendaftaran & Upload File |  Stabil |
+| Seleksi Otomatis Umur |  Stabil |
+| Password Hashing (bcrypt) |  Stabil |
+| UNIQUE Constraint Username |  Stabil |
+| Foreign Key Antar Tabel |  Stabil |
+| JOIN Query Pembayaran |  Stabil |
+| Dashboard Multi-Profil Anak |  Stabil |
+| Nominal Tagihan dari Rincian Biaya |  Stabil |
+| Logout & Hapus Session |  Stabil |
 
 ---
 
-## 🗄️ Struktur Database yang Diuji
+##  Struktur Database yang Diuji
