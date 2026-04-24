@@ -1,6 +1,6 @@
-# 📦 Black Box Testing — Sistem PPDB TKQ AS-SALAM
+# Black Box Testing — Sistem PPDB TKQ AS-SALAM
 
-## 📌 Deskripsi
+## Deskripsi
 Folder ini berisi dokumen pengujian **Black Box Testing** pada Sistem 
 PPDB (Penerimaan Peserta Didik Baru) TKQ AS-SALAM.
 
@@ -10,7 +10,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 👥 Tim Pengujian
+## Tim Pengujian
 | Nama | NIM | Peran |
 |------|-----|-------|
 | Diva Rosalinda | 20231310005 | Tester & Dokumentasi |
@@ -20,7 +20,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 🎯 Teknik Pengujian
+##  Teknik Pengujian
 | Teknik | Keterangan |
 |--------|-----------|
 | Equivalence Partitioning | Membagi input ke kelas valid & tidak valid |
@@ -30,7 +30,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 📂 Daftar Dokumen
+##  Daftar Dokumen
 | No | Nama File | Modul yang Diuji | Jumlah TC | Status |
 |----|-----------|-----------------|-----------|--------|
 | 1 | `TestCase_BlackBox_Login_RegisterAkun.pdf` | Login & Registrasi Akun | 11 TC | ✅ Selesai |
@@ -39,7 +39,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 📊 Rekap Hasil Pengujian
+## Rekap Hasil Pengujian
 | Dokumen | Total TC | Pass | Fail | Coverage |
 |---------|----------|------|------|----------|
 | Black Box Login & Register | 11 | 11 | 0 | 100% |
@@ -49,7 +49,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 🔍 Halaman yang Diuji
+##  Halaman yang Diuji
 ### 1. `views/login.php` & `views/register_akun.php`
 - Login valid/invalid untuk Wali dan Pegawai
 - Registrasi akun baru, username duplikat
@@ -79,7 +79,7 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 
 ---
 
-## 📅 Informasi Pengujian
+## Informasi Pengujian
 | Keterangan | Detail |
 |------------|--------|
 | Mata Kuliah | Software Quality |
