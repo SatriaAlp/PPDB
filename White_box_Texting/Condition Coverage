@@ -1,1 +1,35 @@
+if [ -f "Condition Coverage" ]; then
+  mv "Condition Coverage" "Condition Coverage.bak"
+fi
 
+mkdir -p "Condition Coverage"
+
+cat > "Condition Coverage/README.md" <<'EOF'
+# Condition Coverage
+
+## Deskripsi
+Condition Coverage adalah teknik white box testing yang digunakan untuk memastikan setiap kondisi logika pada program telah diuji dalam dua kemungkinan hasil, yaitu true dan false.
+
+## Modul yang Diuji
+| No | Modul | File Program | Fokus Pengujian |
+|---|---|---|---|
+| 1 | Login | controllers/auth.php | Validasi username dan password |
+| 2 | Pendaftaran | controllers/pendaftaran.php | Validasi data siswa, file, dan umur |
+| 3 | Register | controllers/register_akun.php | Validasi data wali dan username |
+
+## Tabel Condition Coverage
+| No | Modul | Kondisi yang Diuji | True | False | Status |
+|---|---|---|---|---|---|
+| 1 | Login | Username dan password diisi | Login diproses | Input ditolak | Pass |
+| 2 | Login | Akun pegawai ditemukan | Masuk dashboard admin | Lanjut cek akun wali | Pass |
+| 3 | Login | Password pegawai sesuai | Login berhasil | Login gagal | Pass |
+| 4 | Login | Akun wali ditemukan | Masuk dashboard wali | Login gagal | Pass |
+| 5 | Pendaftaran | Wali sudah login | Form diproses | Akses ditolak | Pass |
+| 6 | Pendaftaran | Data wajib lengkap | Data disimpan | Data ditolak | Pass |
+| 7 | Pendaftaran | File upload valid | File diterima | File ditolak | Pass |
+| 8 | Pendaftaran | Umur siswa >= 4 tahun | Status diterima | Status tidak diterima | Pass |
+| 9 | Register | Username belum digunakan | Akun dibuat | Registrasi ditolak | Pass |
+
+## Kesimpulan
+Condition Coverage dinyatakan terpenuhi karena setiap kondisi utama pada modul Login, Pendaftaran, dan Register telah diuji pada kondisi true dan false.
+EOF
