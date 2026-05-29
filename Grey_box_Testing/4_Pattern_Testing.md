@@ -1,28 +1,20 @@
-# 4. Pattern Testing (Exploratory Testing)
-**Pendekatan:** Eksplorasi sistem PPDB TKQ AS-SALAM secara kreatif untuk mengidentifikasi bug pada skenario yang mungkin terlewat oleh pengujian terstruktur.
+# Pengujian 4: Pattern Testing (Exploratory)
+**Fokus:** Mencari bug dengan cara eksplorasi sistem PPDB tanpa script test yang terlalu kaku.
 
-## A. Menguji Fungsional Dasar
-Fokus pada alur utama yang paling sering digunakan oleh pendaftar dan admin.
-* [ ] Membuka halaman utama form pendaftaran PPDB dan memastikan UI dirender sempurna.
-* [ ] Mencoba mengisi seluruh form pendaftaran dengan data valid dan memastikan data tersimpan ke database.
-* [ ] Membuka dashboard Admin, mengedit data pendaftar (misal: mengubah status menjadi "Diterima"), lalu menyimpan perubahan.
-* [ ] Menghapus salah satu data uji pendaftar dari tabel admin dan memastikan data benar-benar hilang dari sistem.
+### 1. Uji Fungsional Dasar
+- Coba isi form pendaftaran dari awal sampai akhir, pastiin masuk ke database.
+- Login admin, coba ubah status pendaftaran anak dari "Pending" jadi "Diterima".
+- Hapus satu data testing, pastiin datanya gak nyangkut di relasi tabel lain.
 
-## B. Menguji Batasan & Skenario Tidak Terduga (Edge Cases)
-Memberikan input ekstrem atau aneh untuk melihat apakah sistem memiliki validasi keamanan yang baik.
-* [ ] Mengisi kolom "Nama Lengkap" dengan ribuan karakter untuk mengecek batas maksimal input (Varchar limit).
-* [ ] Memasukkan angka atau simbol (seperti `@#$%`) pada kolom yang seharusnya hanya berisi huruf (misal: Nama Orang Tua).
-* [ ] Mengosongkan isian wajib (seperti NIK atau Tanggal Lahir) lalu memaksa klik tombol "Daftar".
-* [ ] Mencoba mendaftarkan siswa dengan NIK yang sama persis dengan siswa yang sudah terdaftar sebelumnya (Cek duplikasi).
+### 2. Nyari Bug (Edge Cases / Skenario Aneh)
+- Coba masukin nama pakai emoji atau simbol (misal: `Budi @#$`).
+- NIK sengaja dikosongin atau diisi huruf, terus coba paksa klik submit form.
+- Coba daftar pakai NIK yang udah pernah didaftarin (seharusnya dicegah sistem supaya gak duplikat).
 
-## C. Menguji Performa dan Stabilitas
-Melihat bagaimana aplikasi PPDB menangani beban kerja.
-* [ ] Melakukan *refresh* (F5) berkali-kali secara cepat pada saat proses *submit* form pendaftaran sedang loading.
-* [ ] Menambahkan puluhan data pendaftar secara berurutan dalam waktu singkat untuk melihat apakah server *lag*.
-* [ ] Membuka sistem admin di berbagai web browser berbeda (Chrome, Firefox, Safari, Edge) untuk mengecek komptabilitas.
+### 3. Performa & Stabilitas
+- Spam klik tombol "Daftar" pas form lagi loading, buat ngecek datanya ke-input dobel atau nggak.
+- Buka web admin lewat HP, cek tabel datanya kepotong atau masih bisa digeser (responsif).
 
-## D. Menguji Kegunaan dan Pengalaman Pengguna (UX)
-Fokus pada kemudahan penggunaan sistem, baik bagi pendaftar maupun admin.
-* [ ] Mengecek apakah pesan *error* (jika form salah isi) mudah dipahami oleh orang tua wali murid.
-* [ ] Memastikan warna tombol utama (misal: tombol "Simpan" atau "Daftar") cukup kontras dan mudah dilihat.
-* [ ] Menyimulasikan pendaftaran melalui perangkat *mobile* (HP) untuk memastikan website responsif dan tidak terpotong.
+### 4. User Experience (UX)
+- Cek notifikasi error pas form ada yang salah diisi. Bahasanya gampang dimengerti gak sama orang tua wali?
+- Pastiin warna tombol utama kelihatan jelas dan gak nyaru sama background form.
