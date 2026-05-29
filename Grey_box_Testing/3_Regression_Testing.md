@@ -1,25 +1,18 @@
-# 3. Regression Testing
-[cite_start]**Skenario Uji:** Menambah Fitur Baru (Export Data Pendaftar) pada Dashboard Admin[cite: 146, 154].
+# Pengujian 3: Regression Testing
+**Skenario:** Penambahan fitur baru (Export to Excel/CSV di tabel pendaftar admin).
 
-## A. Deskripsi Kasus
-[cite_start]Pengembang baru saja menambahkan fitur tombol "Export to CSV" agar admin dapat mengunduh seluruh data pendaftar[cite: 156, 158, 190]. 
-[cite_start]**Tujuan Pengujian:** Memastikan bahwa fungsionalitas dasar aplikasi PPDB (seperti menambah, mengedit, dan menghapus data siswa) masih berfungsi dengan baik dan tidak terganggu setelah fitur *export* ini ditambahkan ke dalam sistem[cite: 159, 160, 161].
+**Tujuan:**
+Memastikan setelah fitur "Export" ditambah, fitur lama (CRUD pendaftar) gak jadi error atau nge-bug.
 
-## B. Langkah Pengujian (Regression Suite)
-[cite_start]Berdasarkan standar pengujian, berikut adalah langkah-langkah regresinya[cite: 162]:
+### Tahapan Regresi
+1. **Cek fitur lama:** Tes ulang fitur tambah, edit, dan hapus pendaftar di admin. Pastikan fungsinya masih aman.
+2. **Cek fitur baru:** Klik tombol Export, cek file CSV yang didownload apakah isinya sinkron dengan yang ada di tabel database.
+3. **Cek efek samping:** Pastikan UI/tabel gak berantakan gara-gara nambah tombol baru.
 
-1. **Uji Ulang Fungsionalitas Dasar:**
-   * [cite_start]Jalankan kembali test case fungsionalitas dasar aplikasi (Tambah Siswa, Edit Status, Hapus Siswa)[cite: 163].
-   * [cite_start]Pastikan semua test case dasar tersebut lulus dengan sukses tanpa ada *error* baru[cite: 164].
-2. **Uji Fitur Baru (Export):**
-   * [cite_start]Uji fitur baru impor/ekspor data buku secara menyeluruh untuk memastikan fungsionalitasnya bekerja dengan benar[cite: 165, 166]. (Klik tombol Export, periksa apakah file CSV terunduh, dan buka file untuk memastikan datanya sesuai).
-3. **Pemeriksaan Dampak (Impact Analysis):**
-   * [cite_start]Periksa apakah fitur baru ekspor data tidak menyebabkan masalah (bug) pada antarmuka tabel pendaftar atau fungsi pencarian yang sudah ada[cite: 167].
-
-## C. Hasil Eksekusi Regresi
-| Modul yang Diuji | Tindakan | Ekspektasi | Status (Lulus/Gagal) | Catatan |
-| :--- | :--- | :--- | :---: | :--- |
-| CRUD Pendaftar | Tambah data pendaftar baru | Data berhasil tersimpan ke database | [ ] | |
-| CRUD Pendaftar | Hapus data pendaftar | Data berhasil terhapus dari tabel | [ ] | |
-| Fitur Export | Klik tombol "Export to CSV" | File CSV berhasil diunduh dan format rapi | [ ] | |
-| UI/UX | Cek tampilan tabel data | Tabel tidak berantakan setelah ada tombol baru | [ ] | |
+### Hasil Uji
+| Fitur | Action | Ekspektasi | Hasil |
+|---|---|---|---|
+| CRUD | Tambah data siswa | Masuk ke database & muncul di tabel | - |
+| CRUD | Hapus data siswa | Data beneran hilang dari tabel | - |
+| Export | Klik "Export CSV" | File terdownload, format rapi | - |
+| UI | Buka halaman pendaftar | Layout tetap responsif, tombol bisa diklik | - |
