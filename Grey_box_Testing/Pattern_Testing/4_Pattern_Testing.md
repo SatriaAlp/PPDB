@@ -2,19 +2,19 @@
 **Fokus:** Mencari bug dengan cara eksplorasi sistem PPDB tanpa script test yang terlalu kaku.
 
 ### 1. Uji Fungsional Dasar
-- Coba isi form pendaftaran dari awal sampai akhir, pastiin masuk ke database.
-- Login admin, coba ubah status pendaftaran anak dari "Pending" jadi "Diterima".
-- Hapus satu data testing, pastiin datanya gak nyangkut di relasi tabel lain.
+* [x] Membuka alur form pendaftaran dari awal sampai akhir. **Hasil:** Data masuk ke DB local/production dengan mulus.
+* [x] Login admin dan mengubah status pendaftaran anak dari "Pending" jadi "Diterima". **Hasil:** Status terupdate secara *real-time* di tabel admin.
+* [x] Hapus satu data testing pendaftar. **Hasil:** Data terhapus dan tidak merusak relasi tabel data orang tua.
 
 ### 2. Nyari Bug (Edge Cases / Skenario Aneh)
-- Coba masukin nama pakai emoji atau simbol (misal: `Budi @#$`).
-- NIK sengaja dikosongin atau diisi huruf, terus coba paksa klik submit form.
-- Coba daftar pakai NIK yang udah pernah didaftarin (seharusnya dicegah sistem supaya gak duplikat).
+* [x] Coba masukkan nama anak menggunakan emoji atau simbol aneh. **Hasil:** Sistem berhasil memfilter input dan memunculkan error "Nama hanya boleh berisi huruf".
+* [x] NIK sengaja dikosongkan atau diisi huruf, lalu klik submit. **Hasil:** Frontend langsung memblokir aksi klik dengan border merah pada form NIK (Validasi HTML5 & JS jalan).
+* [x] Coba daftar dua kali pakai NIK yang sama persis. **Hasil:** Sistem menampilkan pesan error "NIK sudah terdaftar", mencegah duplikasi data siswa.
 
 ### 3. Performa & Stabilitas
-- Spam klik tombol "Daftar" pas form lagi loading, buat ngecek datanya ke-input dobel atau nggak.
-- Buka web admin lewat HP, cek tabel datanya kepotong atau masih bisa digeser (responsif).
+* [x] Spam klik tombol "Daftar" pas form lagi proses loading submit. **Hasil:** Sempat terjadi duplikasi data di database pada percobaan pertama. Masalah langsung diatasi dengan menambahkan fungsi *disable button* setelah klik pertama di frontend.
+* [x] Buka web pendaftaran lewat browser HP (Mobile view). **Hasil:** Responsif, form menyesuaikan ukuran layar dan tombol tidak ada yang bertumpuk.
 
 ### 4. User Experience (UX)
-- Cek notifikasi error pas form ada yang salah diisi. Bahasanya gampang dimengerti gak sama orang tua wali?
-- Pastiin warna tombol utama kelihatan jelas dan gak nyaru sama background form.
+* [x] Cek bahasa notifikasi error saat salah isi form. **Hasil:** Bahasanya santun dan mudah dipahami oleh orang tua calon siswa.
+* [x] Memastikan kontras warna tombol utama. **Hasil:** Tombol daftar menggunakan warna yang kontras sehingga mudah ditemukan oleh pendaftar.
