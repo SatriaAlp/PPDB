@@ -1,27 +1,23 @@
-# 1. Orthogonal Array Testing (OAT)
-**Fitur yang diuji:** Formulir Pendaftaran Siswa Baru (PPDB TKQ AS-SALAM)
+# Pengujian 1: Orthogonal Array Testing (OAT)
+**Modul:** Form Pendaftaran Siswa Baru (PPDB TKQ AS-SALAM)
 
-## A. Identifikasi Variabel (Faktor dan Level)
-Berdasarkan kebutuhan pendaftaran, terdapat 3 faktor utama yang mempengaruhi keberhasilan pendaftaran siswa, masing-masing dengan 3 level pengujian:
-1. **Usia Pendaftar:** < 4 Tahun, 4-6 Tahun, > 6 Tahun
-2. **Kelengkapan Dokumen:** Lengkap, Sebagian, Kosong
-3. **Jalur Pendaftaran:** Reguler, Pindahan, Jalur Khusus
+Skenario ini menggunakan OAT untuk menguji form pendaftaran dengan kombinasi input yang berbeda.
+Berdasarkan kebutuhan sistem, kita uji 3 variabel utama:
+- Usia: < 4 Tahun, 4-6 Tahun, > 6 Tahun
+- Dokumen: Lengkap, Kurang, Kosong
+- Jalur: Reguler, Pindahan, Khusus
 
-**Jumlah Kasus Uji:** Berdasarkan pemetaan Orthogonal Array L9(3^3), kita hanya memerlukan 9 kasus uji untuk mencakup seluruh kombinasi kritis.
+Karena ada 3 faktor dan 3 level, array yang terbentuk adalah L9 (butuh 9 test case).
 
-## B. Tabel Skenario Uji (OAT)
-
-| Kasus Uji # | Usia Pendaftar | Kelengkapan Dokumen | Jalur Pendaftaran | Ekspektasi Hasil (Sistem PPDB) | Status |
-| :---: | :--- | :--- | :--- | :--- | :---: |
-| 1 | < 4 Tahun | Lengkap | Reguler | Ditolak (Usia belum mencukupi) | [ ] |
-| 2 | < 4 Tahun | Sebagian | Pindahan | Ditolak (Usia & Dokumen tidak valid) | [ ] |
-| 3 | < 4 Tahun | Kosong | Jalur Khusus | Ditolak (Validasi form gagal) | [ ] |
-| 4 | 4-6 Tahun | Lengkap | Pindahan | Diterima (Lanjut ke proses seleksi/pembayaran) | [ ] |
-| 5 | 4-6 Tahun | Sebagian | Jalur Khusus | Pending (Notifikasi lengkapi dokumen) | [ ] |
-| 6 | 4-6 Tahun | Kosong | Reguler | Ditolak (Validasi form gagal) | [ ] |
-| 7 | > 6 Tahun | Lengkap | Jalur Khusus | Diterima (Review manual oleh admin) | [ ] |
-| 8 | > 6 Tahun | Sebagian | Reguler | Pending (Notifikasi lengkapi dokumen) | [ ] |
-| 9 | > 6 Tahun | Kosong | Pindahan | Ditolak (Validasi form gagal) | [ ] |
-
-## C. Kesimpulan Pengujian OAT
-*(Bagian ini diisi setelah kamu menjalankan 9 pengujian di atas pada aplikasi web PPDB)*
+### Tabel Test Case OAT
+| No | Usia | Dokumen | Jalur | Ekspektasi | Hasil |
+|---|---|---|---|---|---|
+| 1 | < 4 Tahun | Lengkap | Reguler | Ditolak (Usia tidak cukup) | - |
+| 2 | < 4 Tahun | Kurang | Pindahan | Ditolak | - |
+| 3 | < 4 Tahun | Kosong | Khusus | Form error / minta isi dokumen | - |
+| 4 | 4-6 Tahun | Lengkap | Pindahan | Lanjut ke pembayaran | - |
+| 5 | 4-6 Tahun | Kurang | Khusus | Pending (tunggu dokumen) | - |
+| 6 | 4-6 Tahun | Kosong | Reguler | Form error | - |
+| 7 | > 6 Tahun | Lengkap | Khusus | Diterima | - |
+| 8 | > 6 Tahun | Kurang | Reguler | Pending (tunggu dokumen) | - |
+| 9 | > 6 Tahun | Kosong | Pindahan | Form error | - |
