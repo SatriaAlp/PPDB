@@ -10,9 +10,9 @@ Memastikan setelah fitur "Export" ditambah, fitur lama (CRUD pendaftar) gak jadi
 3. **Cek efek samping:** Pastikan UI/tabel gak berantakan gara-gara nambah tombol baru.
 
 ### Hasil Uji
-| Fitur | Action | Ekspektasi | Hasil |
-|---|---|---|---|
-| CRUD | Tambah data siswa | Masuk ke database & muncul di tabel | - |
-| CRUD | Hapus data siswa | Data beneran hilang dari tabel | - |
-| Export | Klik "Export CSV" | File terdownload, format rapi | - |
-| UI | Buka halaman pendaftar | Layout tetap responsif, tombol bisa diklik | - |
+| Fitur | Action | Ekspektasi | Hasil Aktual | Status |
+|---|---|---|---|---|
+| CRUD | Tambah data siswa | Masuk ke database & muncul di tabel | Data masuk tanpa ada field yang null | **Lulus** |
+| CRUD | Hapus data siswa | Data beneran hilang dari tabel | Data terhapus bersih dari database | **Lulus** |
+| Export | Klik "Export CSV" | File terdownload, format rapi | File `pendaftar.csv` berhasil diunduh | **Lulus** |
+| UI | Buka halaman pendaftar | Layout tetap responsif, tombol bisa diklik | Posisi tombol export pas di kanan atas tabel | **Lulus** |
