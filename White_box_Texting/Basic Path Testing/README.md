@@ -251,6 +251,10 @@ Artinya, terdapat **7 jalur independen** yang perlu diuji pada modul pendaftaran
 | 7  | Path 7 | Data valid tetapi umur belum memenuhi syarat | Umur siswa kurang dari 4 tahun             | Status pendaftaran menjadi `Tidak Diterima`  | Passed |
 
 ---
+Dokumentasi
+---
+<img width="535" height="242" alt="image" src="https://github.com/user-attachments/assets/78137807-ccba-4e11-962f-e9cfe5ce3565" />
+
 
 ## 9. Basic Path Testing Modul Pembayaran
 
