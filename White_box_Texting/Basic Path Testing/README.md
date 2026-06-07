@@ -253,7 +253,13 @@ Artinya, terdapat **7 jalur independen** yang perlu diuji pada modul pendaftaran
 ---
 Dokumentasi
 ---
-<img width="535" height="242" alt="image" src="https://github.com/user-attachments/assets/78137807-ccba-4e11-962f-e9cfe5ce3565" />
+<img width="535" height="343" alt="image" src="https://github.com/user-attachments/assets/78137807-ccba-4e11-962f-e9cfe5ce3565" /> <img width="535" height="343" alt="image" src="https://github.com/user-attachments/assets/7fab58d0-f92d-4887-a123-d23a42d96d35" />
+
+---
+<img width="535" height="343" alt="image" src="https://github.com/user-attachments/assets/048a2aef-d2ec-49b9-8c5f-1a8a223818da" />
+
+
+
 
 
 ## 9. Basic Path Testing Modul Pembayaran
@@ -293,6 +299,16 @@ Dokumentasi
 | 2  | Path 2 | Admin memperbarui status pembayaran | `id_pembayaran` dan status baru | Status pembayaran berhasil diperbarui | Passed |
 
 ---
+Dokumentasi
+---
+<img width="544" height="339" alt="image" src="https://github.com/user-attachments/assets/40c52621-41d0-4ef2-8899-7d9a81008112" />  <img width="544" height="339" alt="image" src="https://github.com/user-attachments/assets/3429f102-c73f-4c48-8438-8a83f52e163b" />
+
+---
+<img width="544" height="339" alt="image" src="https://github.com/user-attachments/assets/1600125c-2756-45c7-9085-f1e961d51cf6" />  <img width="544" height="339" alt="image" src="https://github.com/user-attachments/assets/59397c08-7e5c-4166-875f-324932f1278c" />
+
+
+
+
 
 ## 10. Komunikasi Programmer dan SQ Tester
 
