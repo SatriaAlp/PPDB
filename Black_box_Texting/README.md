@@ -1,16 +1,21 @@
 # Black Box Testing — Sistem PPDB TKQ AS-SALAM
 
 ## Deskripsi
-Folder ini berisi dokumen pengujian **Black Box Testing** pada Sistem 
-PPDB (Penerimaan Peserta Didik Baru) TKQ AS-SALAM.
+Repository ini berisi dokumentasi pengujian **Black Box Testing** pada Sistem PPDB (Penerimaan Peserta Didik Baru) TKQ AS-SALAM.
 
-Black Box Testing dilakukan dari **sisi pengguna (user interface)** 
-tanpa melihat kode internal. Fokus pada fungsionalitas, output sistem, 
-dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
+Black Box Testing dilakukan dari sisi **user interface (UI)** tanpa melihat kode internal. Fokus pengujian meliputi:
+- Fungsi sistem
+- Output yang dihasilkan
+- Alur penggunaan (user experience)
+
+Role yang diuji:
+- Wali Siswa
+- Admin
+- Bendahara
 
 ---
 
-## Tim Pengujian
+##  Tim Pengujian
 | Nama | NIM | Peran |
 |------|-----|-------|
 | Diva Rosalinda | 20231310005 | Tester & Dokumentasi |
@@ -21,69 +26,92 @@ dan pengalaman pengguna (Wali Siswa, Admin, Bendahara).
 ---
 
 ##  Teknik Pengujian
-| Teknik | Keterangan |
-|--------|-----------|
+
+| Teknik | Deskripsi |
+|--------|----------|
 | Equivalence Partitioning | Membagi input ke kelas valid & tidak valid |
-| Boundary Value Analysis | Menguji nilai batas (min, max, tepat di batas) |
-| Decision Table Testing | Menguji kombinasi kondisi & aksi |
-| Use Case Testing | Menguji skenario penggunaan nyata per role |
+| Boundary Value Analysis | Menguji nilai batas minimum & maksimum |
+| Decision Table Testing | Menguji kombinasi kondisi dan hasil |
+| Use Case Testing | Menguji alur penggunaan berdasarkan role |
+| State Transition Testing | Menguji perubahan state sistem (login, logout, dll) |
 
 ---
 
-##  Daftar Dokumen
-| No | Nama File | Modul yang Diuji | Jumlah TC | Status |
-|----|-----------|-----------------|-----------|--------|
-| 1 | `TestCase_BlackBox_Login_RegisterAkun.pdf` | Login & Registrasi Akun | 11 TC |  Selesai |
-| 2 | `TestCase_BlackBox_Pendaftaran.pdf` | Form Pendaftaran Siswa | 12 TC |  Selesai |
-| 3 | `TestCase_BlackBox_Pembayaran_Dashboard.pdf` | Pembayaran & Dashboard | 12 TC |  Selesai |
+##  Daftar Test Case
+
+| No | File | Modul | Test Case | Status |
+|----|------|-------|------------|--------|
+| 1 | Login_RegisterAkun | Login & Register | 11 TC | Selesai |
+| 2 | Pendaftaran | Form Siswa | 12 TC | Selesai |
+| 3 | Pembayaran_Dashboard | Payment & Dashboard | 12 TC | Selesai |
 
 ---
 
-## Rekap Hasil Pengujian
-| Dokumen | Total TC | Pass | Fail | Coverage |
-|---------|----------|------|------|----------|
-| Black Box Login & Register | 11 | 11 | 0 | 100% |
-| Black Box Pendaftaran | 12 | 12 | 0 | 100% |
-| Black Box Pembayaran & Dashboard | 12 | 12 | 0 | 100% |
+##  Rekap Hasil Pengujian
+
+| Modul | Total TC | Pass | Fail | Coverage |
+|------|----------|------|------|----------|
+| Login & Register | 11 | 11 | 0 | 100% |
+| Pendaftaran Siswa | 12 | 12 | 0 | 100% |
+| Pembayaran & Dashboard | 12 | 12 | 0 | 100% |
 | **TOTAL** | **35** | **35** | **0** | **100%** |
 
 ---
 
+##  Use Case Testing
+Pengujian dilakukan berdasarkan skenario berikut:
+- Wali Siswa: registrasi → login → daftar siswa → pembayaran → logout
+- Admin: login → verifikasi data → edit/hapus data → logout
+- Bendahara: login → cek pembayaran → validasi transaksi → logout
+- Validasi akses berdasarkan role (authorization)
+
+---
+
+##  State Transition Testing
+Pengujian perubahan state sistem:
+- Guest → Login Success → Dashboard → Logout → Guest
+- Guest → Login Failed → Retry Login
+- Login gagal berulang → akun terkunci (jika fitur tersedia)
+- Akses halaman tanpa login → redirect ke login
+- Session handling untuk setiap role
+
+---
+
 ##  Halaman yang Diuji
-### 1. `views/login.php` & `views/register_akun.php`
-- Login valid/invalid untuk Wali dan Pegawai
-- Registrasi akun baru, username duplikat
-- Validasi field kosong & pesan error
-- Navigasi antar halaman
 
-### 2. `views/register.php` — Form Pendaftaran Siswa
-- Pendaftaran lengkap dengan umur valid
-- Seleksi otomatis berdasarkan umur (>= 4 tahun)
-- Boundary Value Analysis pada field umur
-- Validasi format file upload (.jpg, .png, .pdf)
-- Validasi dropdown dan field wajib
+###  Login & Register
+- Valid / invalid login
+- Register akun baru
+- Validasi input kosong
+- Username duplikat
 
-### 3. `views/form_pembayaran.php` & `views/dashboard_wali.php`
-- Pembayaran valid dan invalid
-- Dropdown tagihan hanya tampil yang belum lunas
-- Dashboard per role (admin, bendahara, staf, wali)
-- Fitur multi-profil anak
-- Fungsi Logout
+###  Form Pendaftaran Siswa
+- Input umur valid (>= 4 tahun)
+- Validasi file upload (.jpg, .png, .pdf)
+- Dropdown & required field validation
+
+###  Pembayaran & Dashboard
+- Pembayaran valid / invalid
+- Filter tagihan belum lunas
+- Dashboard per role
+- Logout system
 
 ---
 
-## 🛠️ Teknologi & Cara Pengujian
-- **Tools:** Browser (Google Chrome/Firefox)
-- **Server:** XAMPP (localhost)
-- **Metode:** Observasi langsung UI, URL redirect, pesan error di browser
+##  Tools & Environment
+- Browser: Chrome / Firefox
+- Server: XAMPP (localhost)
+- Method: Manual UI Testing
 
 ---
 
-## Informasi Pengujian
-| Keterangan | Detail |
-|------------|--------|
-| Mata Kuliah | Software Quality |
-| Dosen | Deni Suprihadi, S.T., M.Kom., MCE |
-| Program Studi | Teknik Informatika |
-| Universitas | Universitas Kebangsaan Republik Indonesia |
-| Tanggal Pengujian | 24 April 2026 |
+##  Informasi
+- Mata Kuliah: Software Quality
+- Dosen: Deni Suprihadi, S.T., M.Kom., MCE
+- Program Studi: Teknik Informatika
+- Universitas: Universitas Kebangsaan Republik Indonesia
+- Tanggal Pengujian: 24 April 2026
+
+---
+
+##  Struktur Folder (Rekomendasi GitHub)
